@@ -1,10 +1,10 @@
 h2 Sign in
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   = devise_error_messages!
-
-  = f.input :email, autofocus: true
-  = f.input :password, autocomplete: "off"
-  = f.input :remember_me, :as => :boolean, :label => false, :inline_label => true if devise_mapping.rememberable?
+  .content
+    = f.input :email, autofocus: true
+    = f.input :password, autocomplete: "off"
+    = f.input :remember_me, :as => :boolean, :label => false, :inline_label => true if devise_mapping.rememberable?
 
   = f.submit "Sign in"
 

@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'slim'
+gem "haml"
 gem 'twitter-bootstrap-rails'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
 gem 'mini_magick', '3.5.0'
@@ -9,6 +10,10 @@ gem 'carrierwave'
 gem 'countries'
 gem 'country_select'
 gem 'simple_form', github: 'plataformatec/simple_form'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'domp'
 
 group :development do
   gem 'guard-rspec'

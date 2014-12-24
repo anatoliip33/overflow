@@ -3,7 +3,7 @@ class AddFieldsToUsers < ActiveRecord::Migration
     change_table :users do |t|
       t.string :login
       t.string :avatar
-      t.string :birthday
+      t.date :birthday
       t.string :country
       t.string :city
       t.string :address

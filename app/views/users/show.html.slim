@@ -1,0 +1,10 @@
+h1 User#show
+p= @user.login
+p= @user.email
+p= @user.birthday
+p= @user.country
+p= @user.city
+p= @user.address
+div= image_tag @user.avatar_url(:thumb) if @user.avatar.present?
+
+= link_to "Settings", edit_user_registration_path
