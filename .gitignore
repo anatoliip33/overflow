@@ -14,3 +14,29 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+
+# Ignore coverage folder (simplecov gem)
+/coverage/
+
+# Uploads
+/public/system
+
+# TextEdit
+*~
+
+# Vim
+*.swp
+*.swo
+
+*.DS_Store
+/app/views/.DS_Store
+/app/views/home/.DS_Store
+/db/schema.rb
+/config/database.yml
+
+# Assets
+/public/assets/
+/public/ckeditor_assets/
+
+# Mac
+.DS_Store
