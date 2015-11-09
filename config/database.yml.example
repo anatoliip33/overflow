@@ -1,7 +1,7 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  username: deploy
+  username: postgres
   password:
   host: localhost
 
