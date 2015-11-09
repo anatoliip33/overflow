@@ -24,6 +24,9 @@
 # TextEdit
 *~
 
+.keep
+README.rdoc
+
 # Vim
 *.swp
 *.swo
@@ -32,6 +35,7 @@
 /app/views/.DS_Store
 /app/views/home/.DS_Store
 /db/schema.rb
+
 /config/database.yml
 
 # Assets
@@ -40,3 +44,6 @@
 
 # Mac
 .DS_Store
+
+# Ignore application configuration
+/config/application.yml

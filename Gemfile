@@ -22,6 +22,17 @@ gem 'devise', '~> 3.2.0'
 gem 'mini_magick', '3.5.0'
 gem 'carrierwave'
 
+gem 'non-stupid-digest-assets'
+
+group :development do
+  gem 'spring'
+  gem 'thin'
+  gem 'quiet_assets'
+  gem 'letter_opener'
+  gem 'binding_of_caller'
+
+  gem 'pry-rails'
+end
 
 gem 'twitter-bootstrap-rails'
 gem 'anjlab-bootstrap-rails', '~> 3.0.0.3', :require => 'bootstrap-rails'
@@ -33,31 +44,25 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'domp'
 
-group :development do
-  gem 'guard-spork'
-  gem 'spork-rails', github: 'sporkrb/spork-rails'
-  gem 'rb-fsevent'
-end
+# group :development do
+#   gem 'guard-spork'
+#   gem 'spork-rails', github: 'sporkrb/spork-rails'
+#   gem 'rb-fsevent'
+# end
 
-group :development, :test do
-  gem 'guard-rspec'
-  gem 'rspec-rails'
-  gem 'rspec-expectations', '~> 3.0.2'
-  gem 'factory_girl_rails'
-end
+# group :development, :test do
+#   gem 'guard-rspec'
+#   gem 'rspec-rails'
+#   gem 'rspec-expectations', '~> 3.0.2'
+#   gem 'factory_girl_rails'
+# end
 
-group :test do
-  gem 'rspec-mocks', '~> 3.0.2'
-  gem 'faker'
-  gem "database_cleaner"
-  gem 'capybara'
-  gem 'launchy'
-  gem 'shoulda-matchers'
-  gem "selenium-webdriver"
-end
-
-
-
-
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-
+# group :test do
+#   gem 'rspec-mocks', '~> 3.0.2'
+#   gem 'faker'
+#   gem "database_cleaner"
+#   gem 'capybara'
+#   gem 'launchy'
+#   gem 'shoulda-matchers'
+#   gem "selenium-webdriver"
+# end
