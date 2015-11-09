@@ -25,6 +25,7 @@ gem 'pg_search'
 
 gem 'figaro'
 gem 'whenever', require: false
+gem 'rails_12factor'
 
 gem 'faker'
 
