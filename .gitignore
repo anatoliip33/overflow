@@ -20,6 +20,7 @@
 
 # Uploads
 /public/system
+/public/uploads
 
 # TextEdit
 *~

@@ -25,7 +25,6 @@ gem 'pg_search'
 
 gem 'figaro'
 gem 'whenever', require: false
-gem 'rails_12factor'
 
 gem 'faker'
 
@@ -49,4 +48,8 @@ group :development do
 
   gem 'spring'
   gem 'letter_opener'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
