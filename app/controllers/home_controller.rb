@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @users = User.order("created_at DESC")
+    @questions = Question.order('created_at ASC').paginate(:page => params[:page])
   end
 end

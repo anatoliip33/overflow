@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  impressionist actions: [:show]
 
   def index
     @question = Question.all
@@ -56,6 +57,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params[:question]
+      params.require(:question).permit(:header, :description, :review)
     end
 end

@@ -22,6 +22,8 @@ gem 'devise', '~> 3.5.2'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'pg_search'
+gem 'impressionist'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 gem 'figaro'
 gem 'whenever', require: false
