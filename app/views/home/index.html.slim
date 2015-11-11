@@ -1,6 +1,8 @@
 h3 All Questions
 - @questions.each do |question|
   p= link_to question.header, question
+  div
+    = image_tag question.user.avatar_url(:thumb)
   p
     strong
       = "#{question.review} views so far!"
