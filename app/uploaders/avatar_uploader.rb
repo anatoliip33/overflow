@@ -10,6 +10,10 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process :resize_to_fill => [200, 200]
   end
 
+  version :mini do
+    process :resize_to_fill => [50, 50]
+  end
+
   # Include the Sprockets helpers for Rails 3.1+ asset pipeline compatibility:
   # include Sprockets::Helpers::RailsHelper
   # include Sprockets::Helpers::IsolatedHelper

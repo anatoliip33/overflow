@@ -7,6 +7,93 @@ footer {
   margin-top: 100px;
 }
 
+#mainbar {
+  float: left;
+  width: 900px;
+  margin: 0 0 0 0;
+  padding: 0;
+}
+
+.subheader {
+  height: 34px;
+  border-bottom: 1px solid #e0e0e0;
+  clear: both;
+}
+
+#questions {
+  clear: both;
+  float: left;
+  width: 900px;
+  margin-bottom: 20px;
+}
+
+.question-summary {
+  padding: 12px 0 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  overflow: hidden;
+  float: left;
+  width: 900px;
+}
+
+.statscontainer {
+  width: 78px;
+  float: left;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+
+.statscontainer .views {
+  width: 58px;
+}
+
+.views {
+  padding-top: 4px;
+  text-align: center;
+}
+
+.summary {
+  float: left;
+  width: 728px;
+}
+
+.fr {
+  float: right;
+}
+
+.started {
+  color: #999;
+  width: 185px;
+}
+
+.user-info {
+  height: 35px;
+  width: 190px;
+}
+
+.user-info .user-action-time {
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+
+.user-info .user-gravatar32 {
+  float: left;
+  border-radius: 1px;
+}
+
+.cbt {
+  clear: both;
+}
+
+.fl {
+  float: left;
+}
+
+.pager {
+  margin: 20px 0;
+}
+
+
+
 .date {
   width: 800px;
   padding-bottom: 10px;
