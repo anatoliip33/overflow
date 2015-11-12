@@ -12,9 +12,9 @@
           .started.fr
             .user-info
               .user-action-time
-                = "answered " + time_ago_in_words(question.updated_at) + " ago"
+                = "answered " + time_ago_in_words(question.answers.last.updated_at) + " ago"
               .user-gravatar32
-                = image_tag question.user.avatar_url(:mini)
+                = image_tag question.answers.last.user.avatar_url(:mini)
   br.cbt
   .pager.fl
     = will_paginate @questions, :container => false, renderer: BootstrapPagination::Rails

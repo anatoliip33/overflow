@@ -9,3 +9,10 @@ p
 p
 strong Created At:
 =< @question.created_at
+
+- @question.answers.each do |answer|
+  p
+  strong
+    = answer.user.login
+  p
+    = answer.body

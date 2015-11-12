@@ -30,6 +30,18 @@ end
   Question.create!(
     header: Faker::Hacker.say_something_smart,
     description: Faker::Lorem.paragraph,
-    user_id: i % 4 + 1
-    )
+    user_id: i % 4 + 1,
+    answers_attributes: [{
+      user_id: rand(1..4),
+      body: Faker::Lorem.paragraph
+    }, {
+      user_id: rand(1..4),
+      body: Faker::Lorem.paragraph
+    }, {
+      user_id: rand(1..4),
+      body: Faker::Lorem.paragraph
+    }, {
+      user_id: rand(1..4),
+      body: Faker::Lorem.paragraph
+    }])
 end

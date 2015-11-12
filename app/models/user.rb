@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   has_many :questions
+  has_many :answers
+  has_many :ratings
 end
