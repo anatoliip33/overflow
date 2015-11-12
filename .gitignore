@@ -19,8 +19,7 @@
 /coverage/
 
 # Uploads
-/public/system
-/public/uploads
+/public/systems
 
 # TextEdit
 *~
