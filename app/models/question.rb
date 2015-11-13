@@ -4,5 +4,7 @@ class Question < ActiveRecord::Base
   accepts_nested_attributes_for :answers, allow_destroy: true
 
   is_impressionable :column_name => :review, :unique => :request_hash, :counter_cache => true
-  self.per_page = 10
+  self.per_page = 5
+
+  scope :unanswered, lambda { joins('LEFT OUTER JOIN answers ON questions.id = answers.question_id').where('answers.question_id IS NULL') }
 end

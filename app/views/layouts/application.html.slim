@@ -39,10 +39,13 @@ html
         #hmenus
           .nav.mainnavs
             ul
-              li class="#{'active' if current_page?(root_path)}"
+              li class="#{'active' if current_page?(root_path) unless params[:unanswered]}"
                 = link_to "Questions", root_path
               li
                 = link_to "Users"
+              - if Question.unanswered.present?
+                li class="#{'active' if current_page?(root_path) and params[:unanswered]}"
+                  = link_to "Unanswered", root_path(unanswered: true)
           .nav.askquestion
             ul
               li class="#{'active' if current_page?(new_question_path)}"

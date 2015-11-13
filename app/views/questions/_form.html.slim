@@ -1,0 +1,7 @@
+= simple_form_for(@question) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :header, label: "Title"
+    = f.input :description, as: :text
+  .form-actions
+    = f.button :submit, "Post your Question", class: "btn btn-primary"
