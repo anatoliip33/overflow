@@ -3,8 +3,6 @@ html
   head
     title Overflow
     = stylesheet_link_tag "application", media: "all"
-    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
-    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css"
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
@@ -18,7 +16,7 @@ html
           /   /   = link_to "Overflow", root_path
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
-              p.navbar-text.navbar-right
+              p.navbar-text
                 | Signed in as
                 = link_to current_user, class: "navbar-link"
                   =< current_user.login
@@ -36,5 +34,19 @@ html
         p.alert.alert-success= notice
       - if alert
         p.alert.alert-danger= alert
-      == yield
+      #header
+        br.cbt
+        #hmenus
+          .nav.mainnavs
+            ul
+              li class="#{'active' if current_page?(root_path)}"
+                = link_to "Questions", root_path
+              li
+                = link_to "Users"
+          .nav.askquestion
+            ul
+              li class="#{'active' if current_page?(new_question_path)}"
+               = link_to "Ask Question", new_question_path
+      #content.snippet-hidden
+        == yield
 
