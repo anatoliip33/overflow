@@ -53,10 +53,10 @@ class QuestionsController < ApplicationController
   private
 
     def set_question
-      @question = Question.find(params[:id])
+      @question = Question.includes(answers: :user).find(params[:id])
     end
 
     def question_params
-      params.require(:question).permit(:header, :description, :review, :user_id)
+      params.require(:question).permit(:header, :description, :review, :user_id, :answer_id)
     end
 end

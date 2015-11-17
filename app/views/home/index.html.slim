@@ -15,7 +15,8 @@
                 .user-action-time
                   = "answered " + time_ago_in_words(question.answers.last.updated_at) + " ago"
                 .user-gravatar32
-                  = image_tag question.answers.last.user.avatar_url(:mini)
+                  = link_to question.answers.last.user
+                    = image_tag question.answers.last.user.avatar_url(:mini)
   br.cbt
   .pager.fl
     = will_paginate @questions, :container => false, renderer: BootstrapPagination::Rails
