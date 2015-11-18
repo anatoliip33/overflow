@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: :new
   impressionist actions: [:show]
 
   def index
@@ -57,6 +58,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:header, :description, :review, :user_id, :answer_id)
+      params.require(:question).permit(:header, :description, :review, :answer_id).merge(user: current_user)
     end
 end

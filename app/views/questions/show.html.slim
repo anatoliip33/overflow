@@ -1,7 +1,3 @@
-p#notice
-  = notice
-= link_to 'Редактировать вопрос', edit_question_path if current_user == @question.user
-
 #question-header
   h1  = link_to @question.header, @question, class: 'question-hyperlink'
 

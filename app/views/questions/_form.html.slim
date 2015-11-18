@@ -3,5 +3,6 @@
   .form-inputs
     = f.input :header, label: "Title"
     = f.input :description, as: :text
+    = f.hidden_field :user_id
   .form-actions
     = f.button :submit, "Post Your Question", class: "btn btn-primary"
