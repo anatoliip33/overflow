@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  # before_action :set_answer, only: [:show, :edit, :update, :destroy]
+  before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!
 
@@ -16,10 +16,10 @@ class AnswersController < ApplicationController
   def show
   end
 
-  # # # GET /answers/new
-  # def new
-  #   @answer = Answer.new
-  # end
+  # # GET /answers/new
+  def new
+    @answer = Answer.new
+  end
 
   # GET /answers/1/edit
   def edit
@@ -63,9 +63,9 @@ class AnswersController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    # def set_answer
-    #   @answer = Answer.find(params[:id])
-    # end
+    def set_answer
+      @answer = Answer.find(params[:id])
+    end
     def set_question
       @question = Question.find(params[:question_id])
     end

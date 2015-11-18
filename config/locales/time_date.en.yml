@@ -1,0 +1,12 @@
+en:
+  date:
+    formats:
+      day_only: "%A"
+      default: "%d.%m.%Y"
+      short: "%d %b"
+      long: "%-d %B %Y"
+      middle: "%A, %d %B"
+      date_only: "%b %d, %Y"
+      month_only: "%B"
+      time: "%H:%M"
+      human: "%b %d, %Y | %I:%M %p"

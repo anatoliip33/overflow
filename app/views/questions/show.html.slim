@@ -1,26 +1,74 @@
-= link_to 'Редактировать вопрос', edit_question_path if current_user == @question.user
 p#notice
   = notice
-p
-  strong= @question.header
+= link_to 'Редактировать вопрос', edit_question_path if current_user == @question.user
 
-p
-  =< @question.description
+#question-header
+  h1  = link_to @question.header, @question, class: 'question-hyperlink'
 
-p
-strong Created At:
-=< @question.created_at
+#mainbar
+  .question
+    table
+      tbody
+        tr
+          td.votecell
+            .vote
+          td.postcell
+            div
+              .post-text
+                p=< @question.description
+              .post-taglist
+              table.fw
+                tbody
+                  tr
+                    td.vt
+                      .post-menu
+                        = link_to 'edit', edit_question_path if current_user == @question.user
+                    td.post-signature.owner
+                      .user-info
+                        .user-action-time
+                          | asked
+                          span.relativetime
+                            =<l @question.updated_at.to_date, format: :human
+                        .user-gravatar32
+                          = link_to @question.user
+                            .gravatar-wrapper-32
+                              = image_tag @question.user.avatar_url(:mini)
+  #answers
+    #answers-header
+      .subheader.answers-subheader
+        h2  = @question.answers.count.to_s + " Answers"
+    - @question.answers.each do |answer|
+      .answer
+        table
+          tbody
+            tr
+              td.votecell
+                .vote
+              td.answercell
+                .post-text
+                  = answer.body
+                table.fw
+                  tbody
+                    tr
+                      td.vt
+                        .post-menu
+                          = link_to 'edit', edit_question_answer_path(@question, answer) if current_user == answer.user
+                      td.post-signature
+                        .user-info
+                          .user-action-time
+                            | answered
+                            .span.relativetime
+                              = time_ago_in_words(answer.updated_at) + " ago"
+                          .user-gravatar32
+                            = link_to answer.user
+                              = answer.user.login
+                              .gravatar-wrapper-32
+                                = image_tag answer.user.avatar_url(:mini)
+    = simple_form_for [@question, Answer.new] do |f|
+      = f.error_notification
+      h2.space Your Answer
+      .form-inputs
+        = f.input :body, label: false, input_html: { rows: 6 }
 
-- @question.answers.each do |answer|
-  p
-  strong
-    = answer.user.city
-  p
-    = answer.body
-= simple_form_for [@question, Answer.new] do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :body, placeholder: 'Please leave your answer', label: false, input_html: { rows: 6 }
-
-  .form-actions
-    = f.button :submit
+      .form-actions
+        = f.button :submit, "Post Your Answer", class: "btn btn-primary"

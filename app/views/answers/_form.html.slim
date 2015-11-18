@@ -1,9 +1,7 @@
-= simple_form_for(@answer) do |f|
+= simple_form_for [@question, @answer] do |f|
   = f.error_notification
   .form-inputs
     = f.input :body, placeholder: 'Please leave your answer', label: false, input_html: { rows: 6 }
-    = f.hidden_field :question_id
-    = f.hidden_field :user_id
 
   .form-actions
-    = f.button :submit
+    = f.button :submit, "Post Your Answer", class: "btn btn-primary"
