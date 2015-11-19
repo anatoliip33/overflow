@@ -13,8 +13,8 @@ class AnswersController < ApplicationController
 
   # GET /answers/1
   # GET /answers/1.json
-  def show
-  end
+  # def show
+  # end
 
   # # GET /answers/new
   def new
@@ -72,6 +72,6 @@ class AnswersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def answer_params
-      params.require(:answer).permit(:body).merge(question: @question, user: current_user)
+      params.require(:answer).permit(:body, rating_attributes: [:score, :answer_id, :user_id, :question_id]).merge(question: @question, user: current_user)
     end
 end

@@ -43,6 +43,9 @@
               td.answercell
                 .post-text
                   = answer.body
+                  - answer.ratings.each do |rating|
+                    div
+                      = rating.score
                 table.fw
                   tbody
                     tr
@@ -65,6 +68,11 @@
       h2.space Your Answer
       .form-inputs
         = f.input :body, label: false, input_html: { rows: 6 }
+        = f.simple_fields_for Rating.new do |p|
+          = p.input :score, as: :select, collection: (1..5).to_a, label: 'Rate', include_blank: false
+          = p.input :question_id, as: :hidden
+          = p.input :user_id, as: :hidden
+          = p.input :answer_id, as: :hidden
 
       .form-actions
         = f.button :submit, "Post Your Answer", class: "btn btn-primary"
