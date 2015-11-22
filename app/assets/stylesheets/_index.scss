@@ -133,6 +133,62 @@ ul {
   text-align: center;
 }
 
+.vote-up-off, .vote-up-on, .vote-down-off, .vote-down-on {
+  height: 30px;
+}
+
+.vote-up-off {
+  background-position: 0 -170px;
+}
+
+.vote-down-off, .vote-down-on {
+    margin-bottom: 10px;
+}
+
+.vote-up-off, .vote-up-on, .vote-down-off, .vote-down-on, .star-on, .star-off, .comment-up-off, .comment-up-on, .comment-flag, .flag-off, .vote-accepted-off, .vote-accepted-on {
+  text-indent: -9999em;
+  font-size: 1px;
+}
+
+.vote-up-off, .vote-down-off, .vote-accepted-off, .star-off, .comment-up-off, .flag-off {
+  cursor: pointer;
+}
+
+.vote-up-off, .vote-up-on, .vote-down-off, .vote-down-on, .star-on, .star-off, .vote-accepted-off, .vote-accepted-on {
+  display: block;
+  margin: 0 auto;
+  text-indent: -999em;
+  width: 40px;
+  /*height: 40px;*/
+  margin-bottom: 2px;
+}
+
+.votecell .vote-count-post {
+    margin: 3px 0;
+}
+
+.vote span {
+  display: block;
+  color: #777;
+}
+
+.vote-count-post {
+  display: block;
+  font-size: 20px;
+  margin: 0 0 3px 0;
+  line-height: 1.3em;
+}
+
+.envelope-on, .envelope-off, .vote-up-off, .vote-up-on, .vote-down-off, .vote-down-on, .star-on, .star-off, .comment-up-off, .comment-up-on, .comment-flag, .edited-yes, .feed-icon, .vote-accepted-off, .vote-accepted-on, .vote-accepted-bounty, .badge-earned-check, .delete-tag, .grippie, .expander-arrow-hide, .expander-arrow-show, .expander-arrow-small-hide, .expander-arrow-small-show, .anonymous-gravatar, .badge1, .badge2, .badge3, .gp-share, .fb-share, .twitter-share, #notify-container span.notify-close, .migrated.to, .migrated.from {
+  background-image: image-url("sprites.svg"),none;
+  background-size: initial;
+}
+
+.vote-down-off {
+    background-position: 0 -220px;
+    margin-bottom: 8px;
+}
+
 h1 {
   font-size: 22px;
   line-height: 1.3;

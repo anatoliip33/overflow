@@ -64,12 +64,13 @@ ActiveRecord::Schema.define(version: 20151112150752) do
   add_index "questions", ["user_id"], name: "index_questions_on_user_id", using: :btree
 
   create_table "ratings", force: :cascade do |t|
-    t.integer  "score"
-    t.integer  "question_id", null: false
-    t.integer  "answer_id",   null: false
-    t.integer  "user_id",     null: false
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.integer  "score",       default: 0, null: false
+    t.integer  "integer",     default: 0, null: false
+    t.integer  "question_id",             null: false
+    t.integer  "answer_id",               null: false
+    t.integer  "user_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "ratings", ["answer_id"], name: "index_ratings_on_answer_id", using: :btree
