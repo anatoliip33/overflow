@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
   resources :questions do
-    post :rating, to: 'ratings#rating'
+    member do
+      put 'like' => 'questions#upvote'
+      put 'unlike' => 'questions#downvote'
+    end
     resources :answers do
-      post :rating, to: 'ratings#rating'
+      resources :ratings
     end
   end
 

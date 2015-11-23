@@ -8,9 +8,10 @@
         tr
           td.votecell
             .vote
-              = link_to '', question_rating_path(@question, score: :like), class: 'vote-up-off', remote: true, method: :post
-              span itemprop="upvoteCount" class="vote-count-post " 1
-              = link_to '', question_rating_path(@question, score: :dislike), class: 'vote-down-off', remote: true, method: :post
+              = link_to '', like_question_path(@question), class: 'vote-up-off', method: :put
+              span itemprop="upvoteCount" class="vote-count-post "
+                = @question.get_upvotes.size - @question.get_downvotes.size
+              = link_to '', unlike_question_path(@question), class: 'vote-down-off', method: :put
           td.postcell
             div
               .post-text

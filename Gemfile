@@ -23,6 +23,7 @@ gem 'mini_magick'
 gem 'carrierwave'
 gem 'pg_search'
 gem 'impressionist'
+gem 'acts_as_votable', '~> 0.10.0'
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 
 gem 'figaro'

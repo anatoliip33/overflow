@@ -1,37 +1,23 @@
 class RatingsController < ApplicationController
-  layout false
-  # before_action :set_rating
+  # before_action :set_rating, only: [:show, :update]
 
-  def rating
-    @rating.score = params[:score]
-    @rating.save
+  def vote_up
+    @question = Question.find(params[:id])
+    @rating = @question.ratings.create(user_id: current_user.id, polarity: 1)
   end
 
-  # def create
-  #   @rating = Rating.new(rating_params)
+  def vote_down
+    @question = Question.find(params[:id])
+    @rating = @question.ratings.create(user_id: current_user.id, polarity: -1)
+  end
 
-  #   respond_to do |format|
-  #     if @rating.save
-  #       format.html { redirect_to :back, notice: 'Rating was successfully created.' }
-  #     end
+  # private
+
+  #   def set_rating
+  #     @rating = Rating.find(params[:id])
   #   end
-  # end
 
-  # def update
-  #   respond_to do |format|
-  #     if @rating.update(rating_params)
-  #       format.html { redirect_to :back, notice: 'Rating was successfully updated.' }
-  #     end
+  #   def rating_params
+  #     params.require(:rating).permit(:score, :question_id, :answer_id).merge(user: current_user)
   #   end
-  # end
-
-  private
-
-    def set_rating
-      @rating = Rating.find(params[:id])
-    end
-
-    # def rating_params
-    #   params.require(:rating).permit(:score, :question_id, :answer_id).merge(user: current_user)
-    # end
 end

@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_question, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
   before_action :authenticate_user!, only: :new
   impressionist actions: [:show]
 
@@ -49,6 +49,16 @@ class QuestionsController < ApplicationController
       format.html { redirect_to question_url, notice: 'Question was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def upvote
+    @question.upvote_from current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @question.downvote_from current_user
+    redirect_to :back
   end
 
   private
