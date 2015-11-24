@@ -1,7 +1,0 @@
-(function() {
-  var like = $('.like[data-parent-id=<%= @parent.id %>][data-parent-type=<%= @parent.class.to_s %>]');
-  like.text('<%= @parent.votes.like.size %>');
-
-  var dislike = $('.dislike[data-parent-id=<%= @parent.id %>][data-parent-type=<%= @parent.class.to_s %>]');
-  dislike.text('<%= @parent.votes.dislike.size %>');
-}());

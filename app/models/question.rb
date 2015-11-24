@@ -1,9 +1,10 @@
 class Question < ActiveRecord::Base
   belongs_to :user
-  has_many :ratings
-  has_many :answers
+  has_many :votes, as: :votable, dependent: :destroy
+  has_many :answers, dependent: :destroy
   accepts_nested_attributes_for :answers, allow_destroy: true
-  acts_as_votable
+
+  validates :user, :header, :description, presence: true
 
   is_impressionable :column_name => :review, :unique => :request_hash, :counter_cache => true
   self.per_page = 5

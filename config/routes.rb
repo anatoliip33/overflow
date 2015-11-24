@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
+  concern :votable do
+    post :vote, to: 'votes#vote'
+  end
+
   resources :questions do
-    member do
-      put 'like' => 'questions#upvote'
-      put 'unlike' => 'questions#downvote'
-    end
+    concerns :votable
     resources :answers do
-      resources :ratings
+      concerns :votable
     end
   end
 

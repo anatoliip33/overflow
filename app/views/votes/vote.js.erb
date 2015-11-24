@@ -1,0 +1,4 @@
+(function() {
+  var count = $('.count[data-parent-id=<%= @parent.id %>][data-parent-type=<%= @parent.class.to_s %>]');
+  count.text('<%= @parent.votes.like.count - @parent.votes.dislike.count %>');
+}());
