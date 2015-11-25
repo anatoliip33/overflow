@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :header
       t.string :description
       t.integer :review, default: 0
+      t.integer :score, :integer, default: 0, null: false
 
       t.references :user, index: true, foreign_key: true
 

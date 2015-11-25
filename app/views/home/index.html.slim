@@ -5,8 +5,20 @@
     - @questions.each do |question|
       .question-summary.narrow
         .statscontainer
+          .stats
+            .vote
+              .votes
+                span.vote-count-post
+                  = question.votes.like.count - question.votes.dislike.count
+                .viewcount vote
+            .status.answered
+              strong = question.answers.count
+              | answers
           .views
-            = "#{question.review} views"
+            - if question.answers.count > question.review
+              = "#{question.answers.count} views"
+            - else
+              = "#{question.review} views"
         .summary
           h3 = link_to question.header, question
           - if question.answers.present?

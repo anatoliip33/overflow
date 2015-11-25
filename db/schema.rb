@@ -18,10 +18,12 @@ ActiveRecord::Schema.define(version: 20151112150752) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
+    t.integer  "score",       default: 0, null: false
+    t.integer  "integer",     default: 0, null: false
     t.integer  "user_id"
     t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
@@ -56,6 +58,8 @@ ActiveRecord::Schema.define(version: 20151112150752) do
     t.string   "header"
     t.string   "description"
     t.integer  "review",      default: 0
+    t.integer  "score",       default: 0, null: false
+    t.integer  "integer",     default: 0, null: false
     t.integer  "user_id"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
@@ -90,6 +94,7 @@ ActiveRecord::Schema.define(version: 20151112150752) do
   create_table "votes", force: :cascade do |t|
     t.integer  "kind",         default: 0, null: false
     t.integer  "integer",      default: 0, null: false
+    t.integer  "score",        default: 0, null: false
     t.integer  "user_id",                  null: false
     t.integer  "votable_id",               null: false
     t.string   "votable_type",             null: false

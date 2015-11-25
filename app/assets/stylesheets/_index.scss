@@ -318,11 +318,55 @@ p {
   font-size: 18px;
 }
 
+.stats {
+  margin: 0 0 0 0;
+  width: 58px;
+}
+
+.status {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
 .statscontainer {
   width: 78px;
   float: left;
   margin-right: 8px;
   margin-left: 8px;
+}
+
+.statscontainer .votes {
+  color: #777;
+  font-size: 11px;
+}
+
+.statscontainer .status {
+  padding: 7px 0 5px 0;
+  font-size: 11px;
+}
+
+.statscontainer .status strong {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.status strong {
+    display: block;
+}
+
+.answered strong {
+  color: #fff;
+}
+
+.answered {
+  background-color: #75845c;
+  color: #fff;
+}
+
+.votes {
+  padding: 0;
+  margin-bottom: 8px;
+  text-align: center;
 }
 
 .statscontainer .views {

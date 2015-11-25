@@ -37,7 +37,7 @@
     #answers-header
       .subheader.answers-subheader
         h2  = @question.answers.count.to_s + " Answers"
-    - @question.answers.includes(:votes).each do |answer|
+    - @question.answers.order('score desc').each do |answer|
       .answer
         table
           tbody
