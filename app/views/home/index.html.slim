@@ -21,6 +21,9 @@
               = "#{question.review} views"
         .summary
           h3 = link_to question.header, question
+          .tags
+            .post-tag
+              = raw question.all_tags
           - if question.answers.present?
             .started.fr
               .user-info

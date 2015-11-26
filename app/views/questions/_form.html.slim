@@ -3,6 +3,7 @@
   .form-inputs
     = f.input :header, label: "Title"
     = f.input :description, as: :text
+    = f.input :all_tags, placeholder: "Tags separated with comma"
     = f.hidden_field :user_id
   .form-actions
     = f.button :submit, "Post Your Question", class: "btn btn-primary"

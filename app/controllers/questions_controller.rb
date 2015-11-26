@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
 
     respond_to do |format|
       if @question.save
-        format.html { redirect_to @question, notice: 'Question was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Question was successfully created.' }
         format.json { render :show, status: :created, location: @question }
       else
         format.html { render :new }
@@ -34,7 +34,7 @@ class QuestionsController < ApplicationController
   def update
     respond_to do |format|
       if @question.update(question_params)
-        format.html { redirect_to @question, notice: 'Question was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
         format.html { render :edit }
@@ -59,6 +59,6 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:header, :description, :review, :answer_id).merge(user: current_user)
+      params.require(:question).permit(:header, :description, :review, :answer_id, :all_tags).merge(user: current_user)
     end
 end

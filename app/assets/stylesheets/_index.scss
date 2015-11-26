@@ -189,6 +189,26 @@ ul {
     margin-bottom: 8px;
 }
 
+.tags {
+  line-height: 18px;
+  float: left;
+}
+
+.post-tag {
+    color: #3e6d8e;
+    font-size: 12px;
+    white-space: nowrap;
+    background: #e4edf4;
+    border: 1px solid #e4edf4;
+    padding: .4em .5em;
+    display: inline-block;
+    margin: 2px 2px 2px 0;
+    text-decoration: none;
+    text-align: center;
+    line-height: 1;
+    border-radius: 0;
+}
+
 h1 {
   font-size: 22px;
   line-height: 1.3;
