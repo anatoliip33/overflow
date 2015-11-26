@@ -110,14 +110,14 @@ ul {
   clear: both;
 }
 
-.question-page #answers .answer {
-  border-bottom: 1px solid #f0f0f0;
-}
-
 .answer {
   padding-bottom: 20px;
   padding-top: 20px;
   width: 728px;
+}
+
+#answers .answer {
+  border-bottom: 2px solid #f0f0f0;
 }
 
 .votecell {

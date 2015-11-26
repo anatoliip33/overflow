@@ -3,10 +3,6 @@ class QuestionsController < ApplicationController
   before_action :authenticate_user!, only: :new
   impressionist actions: [:show]
 
-  def index
-    @questions = Question.all
-  end
-
   def show
   end
 

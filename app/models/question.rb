@@ -14,13 +14,13 @@ class Question < ActiveRecord::Base
   scope :unanswered, lambda { joins('LEFT OUTER JOIN answers ON questions.id = answers.question_id').where('answers.question_id IS NULL') }
 
   def all_tags=(names)
-    self.tags = names.split(",").map do |name|
+    self.tags = names.split(" ").map do |name|
       Tag.where(name: name.strip).first_or_create!
     end
   end
 
   def all_tags
-    self.tags.map(&:name).join(", ")
+    self.tags.map(&:name).join(" ")
   end
 
   def self.tagged_with(name)

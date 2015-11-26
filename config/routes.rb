@@ -11,6 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get 'tags/:tag', to: 'home#index', as: "tag"
+
   devise_for :users, :controllers => { registrations: 'registrations' }
   resources :users, :only => [:show]
 

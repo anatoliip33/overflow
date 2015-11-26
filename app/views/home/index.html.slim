@@ -22,8 +22,7 @@
         .summary
           h3 = link_to question.header, question
           .tags
-            .post-tag
-              = raw question.all_tags
+            = raw tag_links(question.all_tags)
           - if question.answers.present?
             .started.fr
               .user-info
@@ -35,25 +34,3 @@
   br.cbt
   .pager.fl
     = will_paginate @questions, :container => false, renderer: BootstrapPagination::Rails
-  / p
-  /   strong
-  /     = "#{question.review} views so far!"
-
-  / div= image_tag user.avatar_url(:thumb) if user.avatar.present?
-  / p= user.email
-  / p= user.birthday
-  / p= user.country
-  / p= user.city
-  / p= user.address
-
-
-/ .content
-/   h1 Home#index
-/   - @users.each do |user|
-/     p= link_to user.login, user
-/     div= image_tag user.avatar_url(:thumb) if user.avatar.present?
-/     p= user.email
-/     p= user.birthday
-/     p= user.country
-/     p= user.city
-/     p= user.address

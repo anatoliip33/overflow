@@ -17,6 +17,7 @@
               .post-text
                 p=< @question.description
               .post-taglist
+                = raw tag_links(@question.all_tags)
               table.fw
                 tbody
                   tr
