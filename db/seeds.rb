@@ -1,4 +1,5 @@
 user_emails = ['second-user@example.com', 'third-user@example.com', 'fourth-user@example.com']
+all_tags = ['ruby-on-rails', 'ruby', 'javascript', 'java', 'php']
 
 User.create!(
   email: 'word_25@mail.ru',
@@ -31,6 +32,7 @@ end
     header: Faker::Hacker.say_something_smart,
     description: Faker::Lorem.paragraph,
     user_id: i % 4 + 1,
+    all_tags: all_tags.shuffle.sample,
     answers_attributes: [{
       user_id: rand(1..4),
       body: Faker::Lorem.paragraph
