@@ -16,13 +16,30 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new(answer_params)
+    # @question = Question.find(params[:question_id])
+    # @answer = @question.answers.create(params[:answer])
 
+    respond_to do |format|
       if @answer.save
-        redirect_to question_path(@question)
+        format.html { redirect_to question_path(@question) }
+        format.js
       else
         redirect_to question_path(@question), alert: 'Comment can\'t be created'
       end
+    end
   end
+
+  # def update
+  #   respond_to do |format|
+  #     if @answer.update(answer_params)
+  #       format.html { redirect_to @answer, notice: 'Answer was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @answer }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @answer.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
 
 

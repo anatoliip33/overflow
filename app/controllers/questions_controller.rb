@@ -4,6 +4,7 @@ class QuestionsController < ApplicationController
   impressionist actions: [:show]
 
   def show
+    @answer = @question.answers.new
   end
 
   def new

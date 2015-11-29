@@ -38,42 +38,38 @@
     #answers-header
       .subheader.answers-subheader
         h2  = @question.answers.count.to_s + " Answers"
-    - @question.answers.order('score desc').each do |answer|
-      .answer
-        table
-          tbody
-            tr
-              td.votecell
-                .vote
-                  = link_to '', question_answer_vote_path(@question, answer, kind: :like), class: 'vote-up-off', remote: true, method: :post
-                  span.vote-count-post.count data-parent-id=(answer.id) data-parent-type=(answer.class.to_s)
-                    = answer.votes.like.count - answer.votes.dislike.count
-                  = link_to '', question_answer_vote_path(@question, answer, kind: :dislike), class: 'vote-down-off', remote: true, method: :post
-              td.answercell
-                .post-text
-                  = answer.body
-                table.fw
-                  tbody
-                    tr
-                      td.vt
-                        .post-menu
-                          = link_to 'edit', edit_question_answer_path(@question, answer) if current_user == answer.user
-                      td.post-signature
-                        .user-info
-                          .user-action-time
-                            | answered
-                            .span.relativetime
-                              = time_ago_in_words(answer.updated_at) + " ago"
-                          .user-gravatar32
-                            = link_to answer.user
-                              = answer.user.login
-                              .gravatar-wrapper-32
-                                = image_tag answer.user.avatar_url(:mini)
-    = simple_form_for [@question, Answer.new] do |f|
-      = f.error_notification
-      h2.space Your Answer
-      .form-inputs
-        = f.input :body, label: false, input_html: { rows: 6 }
-
-      .form-actions
-        = f.button :submit, "Post Your Answer", class: "btn btn-primary"
+        #new
+          = render @question.answers.order('score desc')
+        .marg
+          = render 'answers/form'
+    / - @question.answers.order('score desc').each do |answer|
+    /   .answer
+    /     table
+    /       tbody
+    /         tr
+    /           td.votecell
+    /             .vote
+    /               = link_to '', question_answer_vote_path(@question, answer, kind: :like), class: 'vote-up-off', remote: true, method: :post
+    /               span.vote-count-post.count data-parent-id=(answer.id) data-parent-type=(answer.class.to_s)
+    /                 = answer.votes.like.count - answer.votes.dislike.count
+    /               = link_to '', question_answer_vote_path(@question, answer, kind: :dislike), class: 'vote-down-off', remote: true, method: :post
+    /           td.answercell
+    /             .post-text
+    /               = answer.body
+    /             table.fw
+    /               tbody
+    /                 tr
+    /                   td.vt
+    /                     .post-menu
+    /                       = link_to 'edit', edit_question_answer_path(@question, answer) if current_user == answer.user
+    /                   td.post-signature
+    /                     .user-info
+    /                       .user-action-time
+    /                         | answered
+    /                         .span.relativetime
+    /                           = time_ago_in_words(answer.updated_at) + " ago"
+    /                       .user-gravatar32
+    /                         = link_to answer.user
+    /                           = answer.user.login
+    /                           .gravatar-wrapper-32
+    /                             = image_tag answer.user.avatar_url(:mini)
