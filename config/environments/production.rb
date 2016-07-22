@@ -79,10 +79,10 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   config.action_mailer.smtp_settings = {
-    address:              'smtp.mandrillapp.com',
+    address:              'smtp.gmail.com',
     port:                     587,
     user_name:          'testnikart@gmail.com',
-    password:            'woIcWLSKxN4IuwClRy_uGg',
+    password:            'sharovik',
     authentication:      'plain',
     enable_starttls_auto: true
   }
