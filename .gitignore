@@ -40,6 +40,7 @@
 # Assets
 /public/assets/
 /public/ckeditor_assets/
+/public/uploads
 
 # Mac
 .DS_Store
